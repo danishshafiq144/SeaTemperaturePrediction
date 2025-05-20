@@ -1,0 +1,85 @@
+2025-05-08 07:34:31,720 - INFO - Script execution started. Output will be saved in: Results_20250508_073431
+2025-05-08 07:34:31,720 - INFO - Loading and cleaning dataset...
+2025-05-08 07:34:35,028 - INFO - 
+Raw dataset shape: (613393, 17)
+2025-05-08 07:34:35,049 - INFO - 
+First 5 rows before cleaning:
+  station_id     longitude       latitude                  time AtmosphericPressure WindDirection WindSpeed  ... MeanWaveDirection Hmax AirTemperature DownPoint SeaTemperature RelativeHumidity OC_Flag
+0        NaN  degrees_east  degrees_north                   UTC                  mb  degrees_true        kn  ...      degrees_true    m       degree_C  degree_C       degree_C          percent     NaN
+1         M1         -11.2        53.1266  2001-02-06T13:00:00Z               967.6         270.0     21.98  ...               NaN  NaN            8.9       NaN            9.0              NaN     1.0
+2         M1         -11.2        53.1266  2001-02-06T14:00:00Z               969.8         270.0     23.93  ...               NaN  NaN            8.5       NaN            9.0              NaN     1.0
+3         M1         -11.2        53.1266  2001-02-06T15:00:00Z               972.0         270.0     19.07  ...               NaN  NaN            8.9       NaN            9.0              NaN     1.0
+4         M1         -11.2        53.1266  2001-02-06T16:00:00Z               973.6         270.0     15.95  ...               NaN  NaN            9.1       NaN            9.0              NaN     1.0
+
+[5 rows x 17 columns]
+2025-05-08 07:34:41,912 - INFO - 
+Handling missing values...
+2025-05-08 07:34:42,048 - INFO - Missing values before handling:
+Hmax                   489608
+MeanWaveDirection      483197
+DownPoint              224062
+Gust                   103099
+RelativeHumidity        97682
+Wavelength              75102
+WavePeriod              72847
+SeaTemperature          56775
+WindSpeed               56173
+WindDirection           24811
+AtmosphericPressure     14151
+AirTemperature           7940
+dtype: int64
+2025-05-08 07:34:43,275 - INFO - 
+Missing values after handling:
+station_id             0
+longitude              0
+latitude               0
+time                   0
+AtmosphericPressure    0
+WindDirection          0
+WindSpeed              0
+Gust                   0
+Wavelength             0
+WavePeriod             0
+AirTemperature         0
+DownPoint              0
+SeaTemperature         0
+RelativeHumidity       0
+OC_Flag                0
+dtype: int64
+2025-05-08 07:34:43,277 - INFO - 
+After Cleaning dataset shape: (613392, 15)
+2025-05-08 07:34:43,285 - INFO - 
+Adding engineered features...
+2025-05-08 07:34:44,382 - INFO - 
+Added 22 new features
+2025-05-08 07:34:44,383 - INFO - New feature columns:
+WindSpeed_rolling_3h
+AirTemp_lag1
+day_of_week
+SeaTemperature_rolling_3h
+WindSpeed_lag1
+month_cos
+month_sin
+SeaTemperature_lag3
+SeaTemperature_rolling_6h
+year
+hour_sin
+hour
+hour_cos
+SeaTemperature_lag2
+month
+WindChill
+SeaTemp_WindSpeed_interaction
+SeaTemperature_rolling_12h
+HeatIndex
+SeaTemperature_lag6
+SeaTemperature_lag1
+Pressure_rolling_6h
+2025-05-08 07:34:44,398 - INFO - 
+Generating visualizations...
+2025-05-08 07:35:14,836 - INFO - Visualizations completed successfully
+2025-05-08 07:35:40,868 - INFO - 
+Final processed data saved to: Results_20250508_073431\processed_data.csv
+2025-05-08 07:35:40,869 - INFO - Final dataset shape: (613381, 37)
+2025-05-08 07:35:40,869 - INFO - 
+Processing pipeline completed successfully
